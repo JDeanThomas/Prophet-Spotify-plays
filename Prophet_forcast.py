@@ -20,7 +20,7 @@ df['y'], lam = boxcox(df['value'])
 model = fbprophet.Prophet()
 model.fit(df)
 
-future = model.make_future_dataframe(periods=365)
+future = model.make_future_dataframe(periods=30)
 forecast = model.predict(future)
 
 model.plot(forecast);
